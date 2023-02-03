@@ -4,7 +4,7 @@ import { CheckCircle } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import { demoProfilePicture } from "../utils/constants";
 
-const ChannelCard = ({ ChannelDetail }) => {
+const ChannelCard = ({ channelDetail, marginTop }) => {
   return (
     <Box
       sx={{
@@ -14,14 +14,17 @@ const ChannelCard = ({ ChannelDetail }) => {
         justifyContent: "center",
         alignItems: "center",
         width: { xs: "350px", md: "350px" },
+        height: '326px',
         margin: "auto",
+        marginTop: marginTop
       }}
     >
-      <Link to={`/channel/${ChannelDetail?.id?.channelId}`}>
+      <Link to={`/channel/${channelDetail?.id?.channelId}`}>
         <CardContent
           sx={{
             display: "flex",
             flexDirection: "column",
+            alignItems: "center",
             justifyContent: "center",
             textAlign: "center",
             color: "#FFF",
@@ -29,10 +32,10 @@ const ChannelCard = ({ ChannelDetail }) => {
         >
           <CardMedia
             image={
-              ChannelDetail?.snippet?.thumbnails?.high?.url ||
+              channelDetail?.snippet?.thumbnails?.high?.url ||
               demoProfilePicture
             }
-            alt={ChannelDetail?.snippet?.title}
+            alt={channelDetail?.snippet?.title}
             sx={{
               borderRadius: "50%",
               height: "180px",
@@ -42,13 +45,13 @@ const ChannelCard = ({ ChannelDetail }) => {
             }}
           />
           <Typography variant="h6">
-            {ChannelDetail?.snippet?.title}
+            {channelDetail?.snippet?.title}
             <CheckCircle sx={{ fontSize: 14, color: "grey", ml: "5px" }} />
           </Typography>
-          {ChannelDetail?.statistics?.subscriberCount && (
+          {channelDetail?.statistics?.subscriberCount && (
             <Typography>
               {parseInt(
-                ChannelDetail?.statistics?.subscriberCount
+                channelDetail?.statistics?.subscriberCount
               ).toLocaleString()}{" "}
               Subscribers
             </Typography>

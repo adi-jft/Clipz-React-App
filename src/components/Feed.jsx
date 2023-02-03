@@ -30,7 +30,7 @@ const Feed = () => {
           variant="body2"
           sx={{ color: "#fff", mt: 1 }}
         >
-          Copyright 2023 JFT. All Rights Reserved.
+          © 2023 JFT. | All Rights Reserved.
         </Typography>
       </Box>
       <Box p={2} sx={{ overflowY: "auto", height: "90vh", flex: 2 }}>
