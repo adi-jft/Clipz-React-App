@@ -4,9 +4,9 @@ import React from "react";
 
 const SearchBar = () => {
   return (
-    // <Grid
-    // container justify = "center"
-    // justifyContent="center">
+    <Grid
+    container justify = "center"
+    justifyContent="center">
       <Paper
         component="form"
         onSubmit={() => {}}
@@ -28,7 +28,7 @@ const SearchBar = () => {
           <Search />
         </IconButton>
       </Paper>
-    // </Grid>
+    </Grid>
   );
 };
 export default SearchBar;

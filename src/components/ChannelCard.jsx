@@ -6,7 +6,17 @@ import { demoProfilePicture } from "../utils/constants";
 
 const ChannelCard = ({ ChannelDetail }) => {
   return (
-    <Box sx={{ boxShadow: "none", borderRadius: "20px" }}>
+    <Box
+      sx={{
+        boxShadow: "none",
+        borderRadius: "20px",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        width: { xs: "350px", md: "350px" },
+        margin: "auto",
+      }}
+    >
       <Link to={`/channel/${ChannelDetail?.id?.channelId}`}>
         <CardContent
           sx={{
@@ -33,8 +43,16 @@ const ChannelCard = ({ ChannelDetail }) => {
           />
           <Typography variant="h6">
             {ChannelDetail?.snippet?.title}
-            <CheckCircle sx={{ fontSize: 12, color: "grey", ml: "5px" }} />
+            <CheckCircle sx={{ fontSize: 14, color: "grey", ml: "5px" }} />
           </Typography>
+          {ChannelDetail?.statistics?.subscriberCount && (
+            <Typography>
+              {parseInt(
+                ChannelDetail?.statistics?.subscriberCount
+              ).toLocaleString()}{" "}
+              Subscribers
+            </Typography>
+          )}
         </CardContent>
       </Link>
     </Box>

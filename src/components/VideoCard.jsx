@@ -11,7 +11,6 @@ import {
 } from "../utils/constants";
 
 const VideoCard = ({video: {id: { videoId },snippet}}) => {
-  console.log(videoId, snippet);
   return (
     <Card
       sx={{
@@ -30,7 +29,7 @@ const VideoCard = ({video: {id: { videoId },snippet}}) => {
       <CardContent sx={{ backgroundColor: "#1e1e1e", height: "105px" }}>
         <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
           <Typography variant="subtitle1" fontWeight="bold" color="#FFF">
-            {snippet?.title.slice(0, 50) || demoVideoTitle.slice(0, 50)}
+            {snippet?.title.slice(0, 60) || demoVideoTitle.slice(0, 60)}
           </Typography>
         </Link>
         <Link
